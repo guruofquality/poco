@@ -53,6 +53,10 @@ IPAddressTest::~IPAddressTest()
 
 void IPAddressTest::testStringConv()
 {
+
+	IPAddress ia0;
+	assert(IPAddress::tryParse(IPAddress::wildcard().toString(), ia0));
+
 	IPAddress ia1("127.0.0.1");
 	assert (ia1.family() == IPAddress::IPv4);
 	assert (ia1.toString() == "127.0.0.1");
